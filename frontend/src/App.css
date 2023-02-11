@@ -1,0 +1,23 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+:root{
+  --light:#c9effb;
+}
+
+/* Utility */
+.validation{
+  color: red;
+  /* display: none; */
+}
+.self-center{
+  align-self: center;
+}
+
+header>img{
+  height: 40px;
+  position: absolute;
+  right: 30px;
+  top:20px;
+}

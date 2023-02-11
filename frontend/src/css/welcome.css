@@ -1,0 +1,69 @@
+.todo-container{
+    height: 100vh;
+    background-color: lightblue;
+}
+.logout-btn{
+    position: absolute;
+    top:15px;
+    left:10px;
+}
+.box{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-height: 68%;
+    height: 1px;
+    background-color: red;
+    width: 30%;
+}
+.box-top{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    height: 15%;
+    background-color: rgb(58, 214, 58);
+}
+.box-bottom{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background-color: white;
+    height: 85%;
+}
+.task{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    /* background-color: green; */
+}
+.task-left{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* background-color: red; */
+    height: 100%;
+    width: 80%;
+}
+.task-left,p{
+    margin: 0px;
+    margin-left: 20px;
+}
+.task-right{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+}
+.task-right>*{
+    cursor: pointer;
+}
+.input-task{
+    margin:10px 0px;
+    display: flex;
+    justify-content: center;
+}
+.input-task>input{
+    border: 1px solid black;
+}
