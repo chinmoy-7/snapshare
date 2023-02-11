@@ -49,6 +49,7 @@ export const AuthContextProvider=({children})=>{
     const handleSignup=async(e)=>{
         e.preventDefault();
         const newUserSignup = await axios.post("http://localhost:3004/signup",newUser)
+        console.log(newUserSignup)
         if(newUserSignup.data.status=="success"){
             alert("User succesfully added");
             navigate("/");
