@@ -30,3 +30,31 @@
     width: 30%;
     height: 8%;
 }
+
+
+/* Mobile friendly */
+@media only screen and (max-width:600px){
+    .signup{
+        height: 100%;
+        justify-content: center;
+    }
+
+    .signup>h1{
+        font-size: 2rem;
+    }
+    .signup>form{
+        
+        flex-direction: column;
+        width: 90%;
+        height: 70%;
+    }
+    .signup>form>div{
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+    button{
+        height: 40px;
+        width: 100%;
+    }
+}

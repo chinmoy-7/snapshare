@@ -9,7 +9,7 @@
 /* Utility */
 .validation{
   color: red;
-  /* display: none; */
+  display: none;
 }
 .self-center{
   align-self: center;
