@@ -87,7 +87,7 @@ const opertaions = (fastify,opts,next)=>{
         }
     })
 
-        //Test middleware
+        //middleware
         fastify.register(require("@fastify/express")).after(()=>{
             fastify.use((req,res,next)=>{
                 const token = req.headers.authorization;

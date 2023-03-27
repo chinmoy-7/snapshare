@@ -1,0 +1,52 @@
+/* Utility */
+.home-padding{
+    padding-left: 50px;
+}
+.home-container{
+    height:100vh;
+    display: flex;
+    color: white;
+}
+
+/* Main CSS */
+.home-container::before{
+    z-index: -1;
+    position: absolute;
+    content: "";
+    top:0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-image: url("../imgs/bg.jpg");
+}
+
+.home-content{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top:10%;
+    height: 90%;
+    width: 100%;
+}
+.home-heading{
+    width: 100%;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-start; */
+}
+.home-options{
+    height: 80%;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.home-options>button{
+font-weight: 600;
+width: 250px;
+height: 100px;
+}
+

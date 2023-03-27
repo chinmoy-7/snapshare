@@ -36,11 +36,11 @@ export const AuthContextProvider=({children})=>{
             
         if(checkLogin.data.status=="failed"){
             alert("Enter correct credentials");
-            console.log("tetst")
+            // console.log("tetst")
         }else{
             sessionStorage.setItem("token",checkLogin.data.token);
             setIsLoggedIn(true);
-            navigate("/welcome")
+            navigate("/home")
             alert("Succesfully logged in")
         }
     }
@@ -76,10 +76,12 @@ export const AuthContextProvider=({children})=>{
             alert("failed")
         }
     }
-
+    const handleBack=()=>{
+        navigate("/home");
+    }
 
     return(
-        <AuthContext.Provider value={{isLoggedIn,setIsLoggedIn,handleLogin,data,setData,handleSignup,newUser,setNewUser,handleLogout,handleDelete,del,setDel}}>
+        <AuthContext.Provider value={{isLoggedIn,setIsLoggedIn,handleLogin,data,setData,handleSignup,newUser,setNewUser,handleLogout,handleDelete,del,setDel,handleBack}}>
             {children}
         </AuthContext.Provider>
     )

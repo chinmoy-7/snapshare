@@ -7,6 +7,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Signup from './components/Signup';
 import Welcome from './components/Welcome';
 import { AuthContextProvider, useAuth } from './context/AuthContext';
+import HomePage from './components/HomePage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path='/' element={<Login/>}/>
               <Route path='/signup' element={<Signup/>}/>
               <Route path='/welcome' element={<Welcome/>}/>
+              <Route path='/home' element={<HomePage/>}/>
           </Routes>
           </AuthContextProvider>
 

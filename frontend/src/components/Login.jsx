@@ -11,7 +11,7 @@ function Login() {
 
     useEffect(()=>{  
         if(sessionStorage.getItem("token")!=null){
-            navigate("/welcome")
+            navigate("/home")
         }else{
             navigate("/")
         }
@@ -40,8 +40,8 @@ function Login() {
         </div>
         
         <div className="login-right">
-            <h1 className='login-padding'>Shot Share</h1>
-            <p className='login-padding'>Click and share your moments</p>
+            <h1 className='login-padding'>All-In-One-Organiser</h1>
+            <p className='login-padding'>Everything you need</p>
         </div>
     </div>
   )

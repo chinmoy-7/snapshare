@@ -77,6 +77,7 @@ function Welcome() {
   return (
     <>
       <div className="todo-container">
+            <div className=" logout-btn btn btn-success" onClick={auth.handleBack}>Back</div>
             <div className="logout-btn btn btn-danger" onClick={auth.handleLogout}>Logout</div>
             <div className="box">
               <div className="box-top">
