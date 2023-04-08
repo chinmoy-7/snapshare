@@ -1,0 +1,87 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap'); */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../imgs/image1.webp");
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.head{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: black;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
+    opacity: 0.6;
+    padding: 10px;
+    width: 100%;
+    color: white;
+}
+.head{
+   display: flex;
+   justify-content: space-between;
+}
+.head i{
+    color: rgb(236, 19, 3);
+}
+.weather-container{
+    text-align: center;
+    width: 400px;
+    background-color: black;
+    color: #fff;
+    opacity: 0.8;
+    box-shadow: 2px 5px 13px rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    padding: 30px;
+}
+#search{
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+.row{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.text{
+    font-size: 1.1rem;
+
+}
+/* .greet{
+    position: relative;
+    top:100px;
+    color: red;
+    right: 50px;
+} */
+.util-button{
+    position: absolute;
+    left: 10px;
+    top:80px
+}
+@media(max-width:400px){
+    .weather-container{
+        margin-top: 150px;
+        margin-bottom: 10px;
+    }
+    /* .greet{
+
+        right: 50%;
+    } */
+    .util-button{
+        visibility: hidden
+    }
+}

@@ -29,11 +29,12 @@ const opertaions = (fastify,opts,next)=>{
     //Add Task
     fastify.post("/api/addTask",async (req,reply)=>{
         try {
-            const {description} = req.body
+            const {description,status} = req.body
             const {userId}=req.raw
             const newTask = await task.create({
                 userId:userId,
-                description:description
+                description:description,
+                status:status
             })
             reply.send({
                 status:"success",
@@ -103,6 +104,11 @@ const opertaions = (fastify,opts,next)=>{
                 }
             })
         })
+
+        //This function sends mail for OTP
+
+
+
         next();
 
 }

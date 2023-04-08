@@ -28,7 +28,7 @@ function HomePage(){
                 <div className="home-options">
                     <button className='btn btn-dark btn-outline-light btn-lg'  onClick={(e)=>{handleHomeSelection("welcome")}}>TODO-APP</button>
                     <button className='btn btn-dark btn-outline-light btn-lg'  onClick={(e)=>{handleHomeSelection("weather")}}>WEATHER-APP</button>
-                    <button className='btn btn-dark btn-outline-light btn-lg'  onClick={(e)=>{handleHomeSelection("book")}}>BOOK-SEARCH</button>
+                    <button className='btn btn-dark btn-outline-light btn-lg'  onClick={(e)=>{handleHomeSelection("book-landing ")}}>BOOK-SEARCH</button>
                 </div>
             </div>
         </div>

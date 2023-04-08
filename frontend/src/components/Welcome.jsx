@@ -12,8 +12,10 @@ function Welcome() {
 
     //States
     const [task,setTask]=useState();
-    const [newTask,setNewTask]=useState({id:"",description:""});
+    const [newTask,setNewTask]=useState({id:"",description:"",status:"false"});
     const [isEditable,setIsEditable]=useState(false)
+    //To indicate the active edit state
+    const [isActive,setIsActive]=useState(false)
     
     const headersProvider = ()=>{
       let token = null;
@@ -39,6 +41,7 @@ function Welcome() {
     const getAllUser=async ()=>{
       
       const allUsers=await axios.get("http://localhost:3004/api/tasks",{headers:headersProvider()});
+      // console.log(allUsers.data.allTask)
       setTask(allUsers.data.allTask)
     }
 
@@ -49,7 +52,7 @@ function Welcome() {
         return
       }
       const addedTask = await axios.post("http://localhost:3004/api/addTask",
-      {description:newTask.description},
+      {description:newTask.description,status:false},
       {
         headers:headersProvider()
       }
@@ -57,9 +60,20 @@ function Welcome() {
 
       setNewTask({...newTask,description:""})
     }
-
     //Edit functionality
-    const handleEditButton=(desc,id)=>{
+    const handleEditButton=(desc,id,e)=>{
+      // console.log(e)
+      setIsActive(true)
+      // console.log(newTask)
+      const test  = task?.filter((data,idx)=>{
+        if(data._id==id){
+          data.status=true;
+          return data
+        }else{
+          return data
+        }
+      })
+      setTask(test)
       setNewTask({...newTask,id:id,description:desc})
       setIsEditable(true)
     }
@@ -71,6 +85,7 @@ function Welcome() {
         await axios.put(`http://localhost:3004/api/edit/${newTask.id}`,newTask,{headers:headersProvider()})
         setNewTask({...newTask,description:""})
         setIsEditable(false)
+        setIsActive(false)
     }
 
 
@@ -85,20 +100,21 @@ function Welcome() {
               </div>
               <div className="box-bottom">
                 <div className="input-task">
-                  <input type="text" name="" id="" value={newTask.description} onChange={(e)=>{setNewTask({...newTask,description:e.target.value})}}/>
+                  <textarea name="" id="" cols="30" rows="10" value={newTask.description} onChange={(e)=>{setNewTask({...newTask,description:e.target.value})}}></textarea>
+                  {/* <input type="text" name="" id="" value={newTask.description} onChange={(e)=>{setNewTask({...newTask,description:e.target.value})}}/> */}
                   {isEditable?<div><button className='btn btn-warning btn-md' onClick={(e)=>handleEdit()}>OK</button>
                     <button className='btn btn-danger btn-md' onClick={()=>setIsEditable(false)}>Cancel</button></div>
                   :<button className='btn btn-primary btn-md' onClick={handleAdd}>Add</button>}
                 </div>
                 {task?.map((item,id)=>{
-                  return(
-                    <div className="task" key={id}>
+                  return( 
+                    <div  key={id}  className='task'>
                     <div className="task-left">
-                    <p>{id+1}.{item.description}</p>
+                    <p>{id+1}.{" "+item.description}</p>
                     </div>
                     <div className="task-right">
                     <img src={del} alt="" onClick={(e)=>{auth.handleDelete(e,item._id)}}/>
-                    <img src={edit} alt="" onClick={()=>handleEditButton(item.description,item._id)}/>
+                    <img src={edit} alt="" onClick={(e)=>handleEditButton(item.description,item._id,e)}/>
                     </div>
                   </div>
                   )

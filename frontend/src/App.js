@@ -8,12 +8,15 @@ import Signup from './components/Signup';
 import Welcome from './components/Welcome';
 import { AuthContextProvider, useAuth } from './context/AuthContext';
 import HomePage from './components/HomePage';
+import Weather from './components/Weather';
+import Landing from './components/landing'
+import BookSearch from './components/booksearch'
 
 function App() {
   return (
     <>
       <header>
-        <img src={logo} />
+        {/* <img src={logo} /> */}
       </header>
         <BrowserRouter>
         <AuthContextProvider>         
@@ -22,6 +25,11 @@ function App() {
               <Route path='/signup' element={<Signup/>}/>
               <Route path='/welcome' element={<Welcome/>}/>
               <Route path='/home' element={<HomePage/>}/>
+              <Route path='/weather' element={<Weather/>}/>
+              <Route path='/book-landing' element={<Landing/>}/>
+              <Route path='/booksearch' element={<BookSearch/>}/>
+
+              
           </Routes>
           </AuthContextProvider>
 

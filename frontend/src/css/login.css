@@ -68,6 +68,31 @@
     font-size: 2rem;
     padding-bottom: 200px;
 }
+.reset-password::before{
+    z-index: -1;
+    position: absolute;
+    content: "";
+    top:0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 10px 10px 10px 10px black;
+    background-image: url("../imgs/bg.jpg");
+}
+.reset-password{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: absolute;
+    height: 50%;
+    width: 30%;
+    /* background-color: red; */
+    left:20%;
+    top: 30%;
+    /* border-radius: 200px; */
+}
 
 
 /* Mobile friendly */
