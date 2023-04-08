@@ -35,7 +35,7 @@ function Welcome() {
         }else{
             navigate("/")
         }
-    },[auth.del,newTask.description])
+    },[auth.del])
 
     //Fetch all the tasks
     const getAllUser=async ()=>{
@@ -59,6 +59,7 @@ function Welcome() {
       )
 
       setNewTask({...newTask,description:""})
+      getAllUser();
     }
     //Edit functionality
     const handleEditButton=(desc,id,e)=>{
