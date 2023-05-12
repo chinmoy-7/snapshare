@@ -30,13 +30,13 @@ const sendMail=async (req,res)=>{
         host:"smtp-relay.sendinblue.com",
         port:587,
         auth:{
-            user:"chinmoy.dehingia@gmail.com",
-            pass:"EjqGfZnFKWyVwcY4"
+            user:"chinmoydehingia4@gmail.com",
+            pass:"cP1OZhwxICmG3rTs"
         }
     })
 
     let info = await transporter.sendMail({
-        from:'"Chinmoy Dehingia" <chinmoy.dehingia@gmail.com>',
+        from:'"Chinmoy Dehingia" <chinmoydehingia@gmail.com>',
         to:email,
         subject:"OTP Authentication",
         text:"OTP",

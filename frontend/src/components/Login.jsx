@@ -106,9 +106,10 @@ function Login() {
                 </div>
                 :""}
 
-                <input type="email" className="form-control py-3" id="floatingEmail" placeholder="name@example.com" onChange={(e)=>{setOTP({OTP:e.target.value})}}/>
+                <input type="email" className="form-control py-3" id="floatingEmail" placeholder="Enter your OTP" onChange={(e)=>{setOTP({OTP:e.target.value})}}/>
                 {/* <label htmlFor="floatingEmail">Email address</label> */}
                 <button className='btn btn-success mt-3  btn-lg' onClick={handleVerifyOTP}>Verify</button>
+                <button className='btn btn-danger mt-3 ms-3 btn-lg ' onClick={()=>(setIsReset(false),setVerifyOTP(false))}>Cancel</button>
             </div>
         </div>:""}
         {isActiveNewPass?<div className="reset-password">
